@@ -11,7 +11,7 @@ export default function ColorForm({onSubmit}){
             <label htmlFor="hex">Hex:</label><br/>
             <Colorinput id="hex" defaultValue="#54c73d"/><br/>
             <label htmlFor="contrastText">Contrast text:</label><br/>
-            <Colorinput id="contrastText" defaultValue="#000" /><br/>
+            <Colorinput id="contrastText" defaultValue="#000000" /><br/>
             <input type="submit" value="Add Color" />
         </form>
     );
