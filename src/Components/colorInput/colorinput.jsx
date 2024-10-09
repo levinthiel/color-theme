@@ -8,7 +8,7 @@ export default function Colorinput({id,defaultValue}) {
     }
     return (
         <>
-            <input type="text" id={id} name="hex" value={inputValue} onChange={handleInputValue}/>
+            <input type="text" id={id} name={id} value={inputValue} onChange={handleInputValue}/>
             <input type="color" value={inputValue} onChange={handleInputValue}/>
         </>
     )
