@@ -4,11 +4,11 @@ import ColorForm from "./Components/colorform/colorform";
 import { useState } from "react";
 import "./App.css";
 import { uid } from 'uid';
-
+import useLocalStorageState from 'use-local-storage-state'
 
 function App() {
 
-  const [newColors, setnewColors]= useState(initialColors)
+  const [newColors, setnewColors]= useLocalStorageState("newColors", {defaultValue: initialColors})
   const [emptyArray, setEmptyArray] = useState(false)
 
   function handleAddColor(event){
@@ -26,7 +26,14 @@ function App() {
     const message = newColors.length === 1 ? setEmptyArray(true) : "The array is not empty.";
     console.log(message);
   }
+  function handleEdit(id, event){
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    console.log(data)
 
+    setnewColors(newColors.map((color) => color.id === id ? {...color, role: data.role, hex: data.hex, contrastText: data.contrastText} : color))
+  }
 
 
   return (
@@ -35,7 +42,7 @@ function App() {
 
       < ColorForm onSubmit={handleAddColor} />
       {newColors.map((color) => {
-        return <Color key={color.id} color={color} onDelete={yesDelete} />;
+        return <Color key={color.id} color={color} onDelete={yesDelete} onHandleEdit={handleEdit} />;
       })}
       {emptyArray &&(
         <p>You have no more colours left, please consider adding some</p>
