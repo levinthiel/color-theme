@@ -23,7 +23,7 @@ export default function Color({ color, onDelete }) {
       {/* -----Hidden Buttons -------------------------------------------------------------------- */}
       <section className={isConfirmingDelete ? "hidden" : ""}>
         <p className="color-card-highlight">
-          Are you sure you want to delete this color ? 
+          Are you sure {/* you want to delete this color  */}? 
         </p>  
         <button type="button"  onClick={plsCancel}>Cancel</button>
         <button type="button" onClick={() => onDelete(color.id)}>Yes Delete</button>

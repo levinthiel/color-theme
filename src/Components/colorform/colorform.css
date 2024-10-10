@@ -1,0 +1,29 @@
+form {
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: column;
+}
+form input {
+    border-radius: 20px;
+    border: 2px solid darkgrey;
+    padding: 5px 10px;
+}
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+form div input[type="text"] {
+    width: 100%;
+}
+input[type="color"] {
+    height: 36px;
+    margin-left: 10px;
+}
+.inputBtn {
+    margin: 20px 0 0 0;
+    border: none;
+    padding: 12px;
+    border-radius: 44px;
+    background: darkgrey;
+    font-weight: bold;
+}
