@@ -10,7 +10,7 @@
   border-radius: 20px;
   padding: 4px 10px;
   font-weight: bold;
-  margin: 5px;
+  margin: 5px 5px 5px 0px;
 }
 .color-card-highlight {
   display: inline;
@@ -22,4 +22,7 @@
 }
 .hidden{
   display: none;
+}
+.color-card form{
+  margin: 10px 0px;
 }

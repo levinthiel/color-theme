@@ -24,6 +24,11 @@ input[type="color"] {
     border: none;
     padding: 12px;
     border-radius: 44px;
-    background: darkgrey;
+    background: #131313;
     font-weight: bold;
+    color: #f7f7f7;
+    fill: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
