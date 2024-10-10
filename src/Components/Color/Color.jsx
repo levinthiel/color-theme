@@ -2,6 +2,7 @@ import "./Color.css";
 import { useState } from "react"
 import "../colorform/colorform.css";
 import Colorinput from "../colorInput/colorinput";
+import CopyColor from "../colorCopy/copyToClipboard"
 
 export default function Color({color, onHandleEdit, onDelete}) {
 
@@ -27,6 +28,7 @@ export default function Color({color, onHandleEdit, onDelete}) {
   return (
     <div className="color-card" style={{ background: color.hex, color: color.contrastText, }} >
       <h3 className="color-card-highlight">{color.hex}</h3>
+      < CopyColor color={color}/>
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
       <button type="button" className={isConfirmingDelete ? "" : "hidden"} onClick={plsDelete}>Delete Color</button>
