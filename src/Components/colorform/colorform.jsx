@@ -1,13 +1,16 @@
 import "./colorform.css";
 import Colorinput from "../colorInput/colorinput";
 
-export default function ColorForm({onSubmit}){
+export default function ColorForm({onSubmit, onContrastCheck}){
 
-
+    
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={(event) => {
+                                onSubmit(event);
+                                onContrastCheck(event);
+                            }}>
             <label htmlFor="role">Role:</label>{/* <br/> */}
-            <input type="text" id="role" name="role" />
+            <input type="text" id="role" name="role" placeholder="Latern Green" />
             <label htmlFor="hex">Hex:</label>
             <div>
                 <Colorinput id="hex" defaultValue="#54c73d"/>

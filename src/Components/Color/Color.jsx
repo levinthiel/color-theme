@@ -3,6 +3,8 @@ import { useState } from "react"
 import "../colorform/colorform.css";
 import Colorinput from "../colorInput/colorinput";
 import CopyColor from "../colorCopy/copyToClipboard"
+import ContrastCheck from "../ContrastCheck/contrastCheck"
+
 
 export default function Color({color, onHandleEdit, onDelete}) {
 
@@ -29,8 +31,10 @@ export default function Color({color, onHandleEdit, onDelete}) {
     <div className="color-card" style={{ background: color.hex, color: color.contrastText, }} >
       <h3 className="color-card-highlight">{color.hex}</h3>
       < CopyColor color={color}/>
+      < ContrastCheck foreground={color.contrastText} background={color.hex} />
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
+
       <button type="button" className={isConfirmingDelete ? "" : "hidden"} onClick={plsDelete}>Delete Color</button>
 
           {/* -----Hidden Buttons -------------------------------------------------------------------- */}
@@ -45,10 +49,10 @@ export default function Color({color, onHandleEdit, onDelete}) {
             </section>
           {/* -----Hidden Buttons -------------------------------------------------------------------- */}
 
-      <button type="button" className={isEdit ? "" : "hidden"} onClick={plsEdit}>Edit </button>
+      <button type="button" className={isEdit ? "" : "hidden"} onClick={() =>plsEdit()}>Edit </button>
           {/* -----Hidden edit -------------------------------------------------------------------- */}
           <section className={isEdit ? "hidden" : ""}>
-            <form onSubmit={(event) => onHandleEdit(color.id, event)} >
+            <form onSubmit={(event) => { onHandleEdit(color.id, event); }} >
               <label htmlFor="role">Role:</label>
               <input type="text" id="role" name="role" defaultValue={color.role} />
               <label htmlFor="hex">Hex:</label>

@@ -24,10 +24,10 @@ input[type="color"] {
     border: none;
     padding: 12px;
     border-radius: 44px;
-    background: #131313;
+    background: #f5f5f5;
     font-weight: bold;
-    color: #f7f7f7;
-    fill: #fff;
+    color: #131313;
+    fill: #131313;
     display: flex;
     justify-content: center;
     align-items: center;
