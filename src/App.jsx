@@ -5,11 +5,13 @@ import { useState } from "react";
 import "./App.css";
 import { uid } from 'uid';
 import useLocalStorageState from 'use-local-storage-state'
+import ThemeSwitch from "./Components/ThemeSwitch/ThemeSwitch";
 
 function App() {
 
   const [newColors, setnewColors]= useLocalStorageState("newColors", {defaultValue: initialColors})
   const [emptyArray, setEmptyArray] = useState(false)
+
 
   /*---Add---------------------------------*/
   function handleAddColor(event){
@@ -41,6 +43,8 @@ function App() {
   return (
     <>
       <h1>Theme Creator</h1>
+
+      < ThemeSwitch onHandleThemes={newColors}/>
 
       < ColorForm onSubmit={handleAddColor} />
       {newColors.map((color) => {

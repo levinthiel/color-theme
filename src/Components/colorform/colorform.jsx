@@ -5,20 +5,26 @@ export default function ColorForm({onSubmit, onContrastCheck}){
 
     
     return (
-        <form onSubmit={(event) => {
+        <form className="topform" onSubmit={(event) => {
                                 onSubmit(event);
                                 onContrastCheck(event);
                             }}>
-            <label htmlFor="role">Role:</label>{/* <br/> */}
-            <input type="text" id="role" name="role" placeholder="Latern Green" />
-            <label htmlFor="hex">Hex:</label>
-            <div>
-                <Colorinput id="hex" defaultValue="#54c73d"/>
-            </div>
-            <label htmlFor="contrastText">Contrast text:</label>
-            <div>
-                <Colorinput id="contrastText" defaultValue="#000000" />
-            </div>
+            < fieldset className="colorname">
+                <label htmlFor="role">Name:</label> <br/>
+                <input type="text" id="role" name="role" placeholder="Latern Green" />
+            </fieldset>
+            <fieldset className="topcolorinput">
+                <label htmlFor="hex">Hex:</label>
+                <div>
+                    <Colorinput id="hex" defaultValue="#54c73d"/>
+                </div>
+            </fieldset>
+            <fieldset className="topcolorinput">
+                <label htmlFor="contrastText">Contrast text:</label>
+                <div>
+                    <Colorinput id="contrastText" defaultValue="#000000" />
+                </div>
+            </fieldset>
             <button type="submit" className="inputBtn">
                 Add Color
                 <svg
